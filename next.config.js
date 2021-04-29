@@ -4,8 +4,6 @@ const withThree = require('next-transpile-modules')([
 
 
 module.exports = withThree({
-  basePath: '/webgl-tweakin',
-  assetPrefix: '/webgl-tweakin',
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(glb|gltf)$/,
