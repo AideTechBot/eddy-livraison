@@ -1,21 +1,3 @@
-const withThree = require('next-transpile-modules')([
-  'three',
-]);
-
-
-module.exports = withThree({
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(glb|gltf)$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          publicPath: "/_next/static/images",
-          outputPath: "static/images/",
-        }
-      },
-    });
-    return config;
-  },
+module.exports = {
 //   exportTrailingSlash: true
-});
+};
