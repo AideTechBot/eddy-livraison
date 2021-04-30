@@ -1,9 +1,41 @@
 import Head from 'next/head'
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library, config } from "@fortawesome/fontawesome-svg-core";
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
+import {RESTAURANT_DATA} from './data.js'
+
+config.autoAddCss = false;
+library.add(faCheck);
+library.add(faTimes);
+
+function displayPhone(n) {
+  return `+${n[0]} (${n.substring(1,4)}) ${n.substring(4,7)}-${n.substring(7,11)}`;
+}
+
+function CheckLabel(props) {
+  const { checked, label } = props;
+  const checkIcon = c => c ? 
+    <FontAwesomeIcon style={{ color: 'green', width: '16px', height: '16px' }} icon="check" />
+    : 
+    <FontAwesomeIcon style={{ color: 'red', width: '16px', height: '16px' }} icon="times" />
+  return (
+    <>
+    <span className="checked-label">
+      {label}&nbsp;{checkIcon(checked)}
+    </span>
+    <style jsx>{`
+      .checked-label {
+        padding: 2px;
+        white-space: nowrap;
+      }
+    `}</style>
+    </>
+  );
+}
 
 export default function Home() {
-  // const [clicked, set] = useState(false);
-
   return (
     <div className="container">
       <Head>
@@ -21,20 +53,113 @@ export default function Home() {
           Une liste d&eacute;di&eacute;e aux livraisons dans la r&eacute;gion d'Edmundston.
         </p>
 
-       
+      <div className="rest-container">
+        {RESTAURANT_DATA.map(rest => (
+          <div className="rest-rows" key={rest.name}>
+            <div className="rest-header">
+              <b>
+                {rest.name}
+              </b>
+              <br/>
+              <span>
+                {rest.address}
+              </span>
+            </div>
+            <div className="rest-after">
+              <CheckLabel label="Dine-In" checked={rest.dineIn} />
+              <CheckLabel label="Take-Out" checked={rest.takeOut} />
+              <CheckLabel label="Pickup" checked={rest.curbsidePickup} />
+            </div>
+            <div className="rest-buttons">
+              <a href={rest.orderURL}>
+                <button title={rest.orderURL} type="button">
+                  Commandez
+                </button>
+              </a>
+              <a href={`tel:${rest.phoneNumber}`}>
+                <button title={displayPhone(rest.phoneNumber)} type="button">
+                  Appelez
+                </button>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
       </main>
 
       <footer>
+        Cr&eacute;&eacute; par&nbsp;
         <a
           href="https://mdionne.me"
           target="_blank"
           rel="noopener noreferrer"
+          className="manuel-link"
         >
-          Powered by certified epic mdionne gamer fuel moments
+          Manuel
         </a>
       </footer>
 
       <style jsx>{`
+        .rest-container {
+          border: 1px solid #eaeaea;
+          padding: 10px;
+        }
+
+        .rest-rows {
+          border: 1px solid #eaeaea;
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+        
+        .rest-header {
+          flex: 1.1;
+        }
+
+        .rest-header span {
+          font-size: small;
+        }
+
+        .rest-after {
+          flex: 1;
+          padding: 0 10px;
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .rest-buttons {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .rest-buttons a {
+          width: 100%;
+          height: 100%
+        }
+        .rest-buttons a button {
+          width: 100%;
+          height: 100%;
+          background-color: #008CBA;
+          border: 1px solid #ffffff;
+          color: white;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          cursor: pointer;0%;
+          transition-duration: 0.2s;
+        }
+
+        .rest-buttons a button:hover {
+          background-color: #015975;
+        }
+
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -54,7 +179,7 @@ export default function Home() {
         }
 
         footer {
-          width: 100%;
+          width: 200px;
           height: 50px;
           border-top: 1px solid #eaeaea;
           display: flex;
@@ -84,6 +209,11 @@ export default function Home() {
           text-decoration: underline;
         }
 
+        .manuel-link {
+          color: #0070f3;
+          text-decoration: none;
+        }
+
         .title {
           margin: 0;
           line-height: 1.15;
@@ -107,50 +237,6 @@ export default function Home() {
           font-size: 1.1rem;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
         }
 
         @media (max-width: 600px) {
