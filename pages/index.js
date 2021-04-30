@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library, config } from "@fortawesome/fontawesome-svg-core";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
-import {RESTAURANT_DATA} from './data.js'
+import {RESTAURANT_DATA} from '../data.js'
 
 config.autoAddCss = false;
 library.add(faCheck);
