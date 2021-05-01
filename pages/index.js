@@ -14,6 +14,23 @@ function displayPhone(n) {
   return `+${n[0]} (${n.substring(1,4)}) ${n.substring(4,7)}-${n.substring(7,11)}`;
 }
 
+function isOpen(hours) {
+  let d = new Date();
+  let n = d.getDay();
+  let now = d.getHours() + "." + d.getMinutes();
+  let day = hours[n];
+  console.log(n);
+  console.log(now, day[0]);
+
+  if ((now > day[0] && now < day[1])) {
+    console.log("We're open right now!");
+    return true;
+  } else {
+    console.log("We are closed!");
+    return false;
+  }
+}
+
 function CheckLabel(props) {
   const { checked, label } = props;
   const checkIcon = c => c ? 
@@ -71,16 +88,27 @@ export default function Home() {
               <CheckLabel label="Pickup" checked={rest.curbsidePickup} />
             </div>
             <div className="rest-buttons">
-              <a href={rest.orderURL}>
-                <button title={rest.orderURL} type="button">
-                  Commandez
-                </button>
-              </a>
-              <a href={`tel:${rest.phoneNumber}`}>
-                <button title={displayPhone(rest.phoneNumber)} type="button">
-                  Appelez
-                </button>
-              </a>
+              {
+              isOpen(rest.openHours) ? 
+              <>
+                <a href={rest.orderURL}>
+                  <button disabled={!isOpen(rest.openHours)} title={rest.orderURL} type="button">
+                    Commandez
+                  </button>
+                </a>
+                <a href={`tel:${rest.phoneNumber}`}>
+                  <button disabled={!isOpen(rest.openHours)} title={displayPhone(rest.phoneNumber)} type="button">
+                    Appelez
+                  </button>
+                </a>
+              </>
+              :
+              <div>
+                <b>
+                  Ferm&eacute;
+                </b>
+              </div>
+              }
             </div>
           </div>
         ))}
@@ -136,6 +164,15 @@ export default function Home() {
         .rest-buttons {
           display: flex;
           flex-direction: column;
+          flex: 0.5;
+        }
+        .rest-buttons div {
+          text-align: center;
+          margin: auto auto;
+          text-decoration: none;
+          color: red;
+          font-size: 16px;
+          cursor: not-allowed;
         }
 
         .rest-buttons a {
@@ -158,6 +195,12 @@ export default function Home() {
 
         .rest-buttons a button:hover {
           background-color: #015975;
+        }
+
+        .rest-buttons a button:disabled {
+          background-color: #dddddd;
+          cursor: not-allowed;
+          color: #c0c0c0;
         }
 
         .container {
