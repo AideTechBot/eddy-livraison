@@ -89,8 +89,8 @@ export default function Home() {
                     {isOpen(rest.openHours) ? 'Commandez' : 'Fermé'}
                   </button>
                 </a>
-                <a href={`tel:${rest.phoneNumber}`}>
-                  <button style={{visibility: isOpen(rest.openHours) ? 'visible' : 'hidden'}}disabled={!isOpen(rest.openHours)} title={displayPhone(rest.phoneNumber)} type="button">
+                <a style={{visibility: isOpen(rest.openHours) ? 'visible' : 'hidden'}} href={`tel:${rest.phoneNumber}`}>
+                  <button style={{visibility: isOpen(rest.openHours) ? 'visible' : 'hidden'}} disabled={!isOpen(rest.openHours)} title={displayPhone(rest.phoneNumber)} type="button">
                     {/* I'm shimming the flex box with text here I know */}
                     {isOpen(rest.openHours) ? 'Appelez' : 'Commandez'}
                   </button>
