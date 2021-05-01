@@ -84,27 +84,17 @@ export default function Home() {
               <CheckLabel label="Pickup" checked={rest.curbsidePickup} />
             </div>
             <div className="rest-buttons">
-              {
-              isOpen(rest.openHours) ? 
-              <>
                 <a href={rest.orderURL}>
                   <button disabled={!isOpen(rest.openHours)} title={rest.orderURL} type="button">
-                    Commandez
+                    {isOpen(rest.openHours) ? 'Commandez' : 'Fermé'}
                   </button>
                 </a>
                 <a href={`tel:${rest.phoneNumber}`}>
-                  <button disabled={!isOpen(rest.openHours)} title={displayPhone(rest.phoneNumber)} type="button">
-                    Appelez
+                  <button style={{visibility: isOpen(rest.openHours) ? 'visible' : 'hidden'}}disabled={!isOpen(rest.openHours)} title={displayPhone(rest.phoneNumber)} type="button">
+                    {/* I'm shimming the flex box with text here I know */}
+                    {isOpen(rest.openHours) ? 'Appelez' : 'Commandez'}
                   </button>
                 </a>
-              </>
-              :
-              <div>
-                <b>
-                  Ferm&eacute;
-                </b>
-              </div>
-              }
             </div>
           </div>
         ))}
@@ -196,7 +186,7 @@ export default function Home() {
         .rest-buttons a button:disabled {
           background-color: #dddddd;
           cursor: not-allowed;
-          color: #c0c0c0;
+          color: #828282;
         }
 
         .container {
