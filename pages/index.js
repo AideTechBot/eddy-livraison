@@ -19,14 +19,10 @@ function isOpen(hours) {
   let n = d.getDay();
   let now = d.getHours() + "." + d.getMinutes();
   let day = hours[n];
-  console.log(n);
-  console.log(now, day[0]);
 
   if ((now > day[0] && now < day[1])) {
-    console.log("We're open right now!");
     return true;
   } else {
-    console.log("We are closed!");
     return false;
   }
 }
