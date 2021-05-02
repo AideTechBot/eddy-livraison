@@ -67,37 +67,43 @@ export default function Home() {
         </p>
 
       <div className="rest-container">
-        {RESTAURANT_DATA.map(rest => (
-          <div className="rest-rows" key={rest.name}>
-            <div className="rest-header">
-              <b>
-                {rest.name}
-              </b>
-              <br/>
-              <span>
-                {rest.address}
-              </span>
+        {RESTAURANT_DATA.map(rest => {
+          const open = isOpen(rest.openHours);
+          const openVisible = open ? 'visible' : 'hidden';
+          return (
+            <div className="rest-rows" key={rest.name}>
+              <div className="rest-header">
+                <b>
+                  {rest.name}
+                </b>
+                <br/>
+                <span>
+                  {rest.address}
+                </span>
+              </div>
+              <div className="rest-after">
+                <CheckLabel label="Dine-In" checked={rest.dineIn} />
+                <CheckLabel label="Take-Out" checked={rest.takeOut} />
+                <CheckLabel label="Delivery" checked={rest.delivery} />
+              </div>
+              <div className="rest-buttons">
+                  {rest.orderURL.length !== 0 ?
+                  <a href={rest.orderURL}>
+                    <button disabled={!open} title={rest.orderURL} type="button">
+                      {open ? 'Commandez' : 'Fermé'}
+                    </button>
+                  </a> : null }
+                  {rest.phoneNumber.length !== 0 ?
+                  <a style={{visibility: openVisible }} href={`tel:${rest.phoneNumber}`}>
+                    <button style={{visibility: openVisible }} disabled={!open} title={displayPhone(rest.phoneNumber)} type="button">
+                      {/* I'm shimming the flex box with text here I know */}
+                      {open ? 'Appelez' : 'Commandez'}
+                    </button>
+                  </a> : null }
+              </div>
             </div>
-            <div className="rest-after">
-              <CheckLabel label="Dine-In" checked={rest.dineIn} />
-              <CheckLabel label="Take-Out" checked={rest.takeOut} />
-              <CheckLabel label="Delivery" checked={rest.delivery} />
-            </div>
-            <div className="rest-buttons">
-                <a href={rest.orderURL}>
-                  <button disabled={!isOpen(rest.openHours)} title={rest.orderURL} type="button">
-                    {isOpen(rest.openHours) ? 'Commandez' : 'Fermé'}
-                  </button>
-                </a>
-                <a style={{visibility: isOpen(rest.openHours) ? 'visible' : 'hidden'}} href={`tel:${rest.phoneNumber}`}>
-                  <button style={{visibility: isOpen(rest.openHours) ? 'visible' : 'hidden'}} disabled={!isOpen(rest.openHours)} title={displayPhone(rest.phoneNumber)} type="button">
-                    {/* I'm shimming the flex box with text here I know */}
-                    {isOpen(rest.openHours) ? 'Appelez' : 'Commandez'}
-                  </button>
-                </a>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       </main>

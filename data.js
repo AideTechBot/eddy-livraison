@@ -127,12 +127,12 @@ export const RESTAURANT_DATA = [
     },
     {
         name: "The Pirate",
-        address: "1791 Rue Principale",
+        address: "1791-A Main Street (M.M.F.N.)",
         dineIn: true,
         takeOut: true,
         delivery: true,
-        orderURL: "https://www.kfc.ca/menu/overview",
-        phoneNumber: "15067399777",
+        orderURL: "",
+        phoneNumber: "15067357111",
         openHours: [
             [11,22.00], //starts on sunday
             [11,22.00],
