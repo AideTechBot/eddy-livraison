@@ -69,7 +69,10 @@ export default function Home() {
       <div className="rest-container">
         {RESTAURANT_DATA.map(rest => {
           const open = isOpen(rest.openHours);
-          const openVisible = open ? 'visible' : 'hidden';
+          const canCall = rest.phoneNumber.length !== 0;
+          const canOrder = rest.orderURL.length !== 0;
+          const callVisible = canCall && open ? 'visible' : 'hidden';
+          const orderVisible = canOrder || !open ? 'visible' : 'hidden';
           return (
             <div className="rest-rows" key={rest.name}>
               <div className="rest-header">
@@ -82,24 +85,22 @@ export default function Home() {
                 </span>
               </div>
               <div className="rest-after">
-                <CheckLabel label="Dine-In" checked={rest.dineIn} />
-                <CheckLabel label="Take-Out" checked={rest.takeOut} />
-                <CheckLabel label="Delivery" checked={rest.delivery} />
+                <CheckLabel label='"Dine-In"' checked={rest.dineIn} />
+                <CheckLabel label="À emporter" checked={rest.takeOut} />
+                <CheckLabel label="Livraison" checked={rest.delivery} />
               </div>
               <div className="rest-buttons">
-                  {rest.orderURL.length !== 0 ?
-                  <a href={rest.orderURL}>
-                    <button disabled={!open} title={rest.orderURL} type="button">
+                  <a href={rest.orderURL} style={{visibility: orderVisible}}>
+                    <button disabled={!open} title={rest.orderURL} type="button" style={{visibility: orderVisible}}>
                       {open ? 'Commandez' : 'Fermé'}
                     </button>
-                  </a> : null }
-                  {rest.phoneNumber.length !== 0 ?
-                  <a style={{visibility: openVisible }} href={`tel:${rest.phoneNumber}`}>
-                    <button style={{visibility: openVisible }} disabled={!open} title={displayPhone(rest.phoneNumber)} type="button">
+                  </a>
+                  <a style={{visibility: callVisible }} href={`tel:${rest.phoneNumber}`}>
+                    <button style={{visibility: callVisible }} disabled={!open} title={displayPhone(rest.phoneNumber)} type="button">
                       {/* I'm shimming the flex box with text here I know */}
                       {open ? 'Appelez' : 'Commandez'}
                     </button>
-                  </a> : null }
+                  </a>
               </div>
             </div>
           );
