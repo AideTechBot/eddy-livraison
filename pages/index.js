@@ -81,7 +81,7 @@ export default function Home() {
             <div className="rest-after">
               <CheckLabel label="Dine-In" checked={rest.dineIn} />
               <CheckLabel label="Take-Out" checked={rest.takeOut} />
-              <CheckLabel label="Pickup" checked={rest.curbsidePickup} />
+              <CheckLabel label="Delivery" checked={rest.delivery} />
             </div>
             <div className="rest-buttons">
                 <a href={rest.orderURL}>
