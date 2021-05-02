@@ -23,6 +23,7 @@ jobs:
         uses: actions/setup-node@v1
       - run: npm install
       - run: npm run build
+      - run: sed -i '14s/.*/if(typeof nextConfig\.exportPathMap!==\x27function\x27){if(!options\.silent){Log\.info(`No "exportPathMap" found in "\${_constants2\.CONFIG_FILE}"\. Generating map from "\.\/pages"`);}nextConfig\.exportPathMap=async defaultMap=>{return defaultMap;};}const{i18n,images:{loader=\x27default\x27}}=nextConfig;\/\*if(i18n\&\&!options\.buildExport){throw new Error(`i18n support is not compatible with next export\. See here for more info on deploying: https:\/\/nextjs\.org\/docs\/deployment`);}\*\/if(!options\.buildExport){const{isNextImageImported}=await nextExportSpan\.traceChild(\x27is-next-image-imported\x27)\.traceAsyncFn(()=>_fs\.promises\.readFile((0,_path\.join)(distDir,_constants2\.EXPORT_MARKER),\x27utf8\x27)\.then(text=>JSON\.parse(text))\.catch(()=>({})));if(isNextImageImported\&\&loader===\x27default\x27\&\&!_ciInfo\.hasNextSupport){throw new Error(`Image Optimization using Next\.js\x27 default loader is not compatible with \\`next export\\`\./' node_modules/next/dist/export/index.js  
       - run: npm run export
       - run: touch out/.nojekyll
         env:
