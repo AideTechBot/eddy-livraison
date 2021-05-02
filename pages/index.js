@@ -15,7 +15,7 @@ function displayPhone(n) {
 }
 
 function isOpen(hours) {
-  let d = new Date();
+  let d = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Moncton"}));
   let n = d.getDay();
   let now = d.getHours() + "." + d.getMinutes();
   let day = hours[n];
@@ -76,9 +76,9 @@ export default function Home() {
           return (
             <div className="rest-rows" key={rest.name}>
               <div className="rest-header">
-                <b>
+                <h2>
                   {rest.name}
-                </b>
+                </h2>
                 <br/>
                 <span>
                   {rest.address}
@@ -291,6 +291,18 @@ export default function Home() {
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
+        }
+
+        h2 {
+          font-size: 16px;
+          display: inline;
+          margin-block-start: auto;
+          margin-block-end: auto;
+          margin-inline-start: auto;
+          margin-inline-end: auto;
+          margin-top: 0;
+          margin-bottom: 0;
+          font-weight: bold;
         }
 
         * {
