@@ -2,6 +2,7 @@ export const fr = {
   "/": {
     frontPageHeader: "Où manger?",
     frontPageHeadline: "Une liste dédiée aux livraisons dans la région d'Edmundston.",
+    frontPageLocaleLink: "English",
     frontPageDineIn: "\"Dine-in\"",
     frontPageTakeOut: "À emporter",
     frontPageDelivery: "Livraison",

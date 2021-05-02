@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import { useRouter } from "next/router"
 import React from 'react'
 import { useIntl } from 'react-intl'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -65,8 +67,11 @@ function SecondButton(prop) {
 };
 
 export default function Home() {
-  const { formatMessage } = useIntl()
-  const format = id => formatMessage({ id })
+  const router = useRouter();
+  const { locale } = router;
+  const nextLocale = locale === "en" ? "fr" : "en";
+  const { formatMessage } = useIntl();
+  const format = id => formatMessage({ id });
 
   return (
     <div className="container">
@@ -75,7 +80,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={format("frontPageHeadline")} />
       </Head>
-
       <main>
         <h1 className="title">
           {format("frontPageHeader")}
@@ -84,6 +88,7 @@ export default function Home() {
         <p className="description">
           {format("frontPageHeadline")}
         </p>
+        <span className="locale-link"><Link href={`/${nextLocale}`} locale="fr">{format("frontPageLocaleLink")}</Link></span>
 
       <div className="rest-container">
         {RESTAURANT_DATA.map(rest => {
@@ -224,8 +229,12 @@ export default function Home() {
           align-items: center;
         }
 
+        .locale-link {
+          padding-bottom: 2em;
+        }
+
         main {
-          padding: 5rem 0;
+          padding: 2.5rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
