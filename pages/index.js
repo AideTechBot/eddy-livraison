@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import React from 'react'
+import { useIntl } from 'react-intl'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library, config } from "@fortawesome/fontawesome-svg-core";
+import { library, config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
 import {RESTAURANT_DATA} from '../data.js'
@@ -48,22 +49,40 @@ function CheckLabel(props) {
   );
 }
 
+// this is a dirty trick to show the longest word
+// when its hidden so that the box is big enough
+function SecondButton(prop) {
+  const { open, format } = prop;
+  const arr = [
+    format("frontPageOrder"),
+    format("frontPageCall"),
+    format("frontPageClosed"),
+  ];
+  const max = arr.reduce((a, b) =>
+    a.length > b.length ? a : b
+  );
+  return open ? <>{format("frontPageCall")}</> : <>{max}</>;
+};
+
 export default function Home() {
+  const { formatMessage } = useIntl()
+  const format = id => formatMessage({ id })
+
   return (
     <div className="container">
       <Head>
         <title>Eddy-Livraisons</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Une liste dédiée aux livraisons dans la région d'Edmundston" />
+        <meta name="description" content={format("frontPageHeadline")} />
       </Head>
 
       <main>
         <h1 className="title">
-           O&ugrave; manger?
+          {format("frontPageHeader")}
         </h1>
 
         <p className="description">
-          Une liste d&eacute;di&eacute;e aux livraisons dans la r&eacute;gion d'Edmundston.
+          {format("frontPageHeadline")}
         </p>
 
       <div className="rest-container">
@@ -85,20 +104,20 @@ export default function Home() {
                 </span>
               </div>
               <div className="rest-after">
-                <CheckLabel label='"Dine-In"' checked={rest.dineIn} />
-                <CheckLabel label="À emporter" checked={rest.takeOut} />
-                <CheckLabel label="Livraison" checked={rest.delivery} />
+                <CheckLabel label={format("frontPageDineIn")} checked={rest.dineIn} />
+                <CheckLabel label={format("frontPageTakeOut")} checked={rest.takeOut} />
+                <CheckLabel label={format("frontPageDelivery")} checked={rest.delivery} />
               </div>
               <div className="rest-buttons">
                   <a href={rest.orderURL} style={{visibility: orderVisible}}>
                     <button disabled={!open} title={rest.orderURL} type="button" style={{visibility: orderVisible}}>
-                      {open ? 'Commandez' : 'Fermé'}
+                      {open ? format("frontPageOrder") : format("frontPageClosed")}
                     </button>
                   </a>
                   <a style={{visibility: callVisible }} href={`tel:${rest.phoneNumber}`}>
                     <button style={{visibility: callVisible }} disabled={!open} title={displayPhone(rest.phoneNumber)} type="button">
                       {/* I'm shimming the flex box with text here I know */}
-                      {open ? 'Appelez' : 'Commandez'}
+                      <SecondButton open={open} format={format} />
                     </button>
                   </a>
               </div>
@@ -110,7 +129,7 @@ export default function Home() {
       </main>
 
       <footer>
-        Cr&eacute;&eacute; par&nbsp;
+        {format("frontPageFooter")}&nbsp;
         <a
           href="https://mdionne.me"
           target="_blank"

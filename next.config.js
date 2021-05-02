@@ -1,3 +1,7 @@
 module.exports = {
-//   exportTrailingSlash: true
+  //   exportTrailingSlash: true
+  i18n: {
+    locales: ["en", "fr"],
+    defaultLocale: "fr",
+  },
 };
