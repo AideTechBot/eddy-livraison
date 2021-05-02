@@ -9,6 +9,8 @@ export const fr = {
     frontPageOrder: "Commandez",
     frontPageCall: "Appelez",
     frontPageClosed: "Fermé",
+    frontPageFeedback: "Y a-t-il une erreur sur cette page?",
+    frontPageContactMe: "Contactez moi.",
     frontPageFooter: "Créée par",
   }
 }

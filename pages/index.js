@@ -88,7 +88,14 @@ export default function Home() {
         <p className="description">
           {format("frontPageHeadline")}
         </p>
-        <span className="locale-link"><Link href={`/${nextLocale}`} locale="fr">{format("frontPageLocaleLink")}</Link></span>
+        <span className="locale-link">
+          <Link
+            href={`/${nextLocale}`} 
+            locale="fr"
+          >
+            <a style={{ color: "#0070f3", textDecoration: 'none' }}>{format("frontPageLocaleLink")}</a>
+          </Link>
+        </span>
 
       <div className="rest-container">
         {RESTAURANT_DATA.map(rest => {
@@ -130,6 +137,17 @@ export default function Home() {
           );
         })}
       </div>
+
+        <p style={{ paddingTop: '2em'}}>
+          {format("frontPageFeedback")}&nbsp;
+          <a 
+            style={{ color: '#0070f3', textDecoration: 'none' }} 
+            className="contact"
+            href="mailto:help@eddy-livraison.com?subject=[Issue with Eddy-Livraison]"
+          >
+            {format("frontPageContactMe")}
+          </a>
+        </p>
 
       </main>
 
