@@ -138,7 +138,7 @@ export default function Home() {
           const canCall = rest.phoneNumber.length !== 0;
           const canOrder = rest.orderURL.length !== 0;
           const callVisible = canCall && open ? 'visible' : 'hidden';
-          const orderVisible = canOrder || !open ? 'visible' : 'hidden';
+          const orderVisible = (canOrder && open) || !open ? 'visible' : 'hidden';
           return (
             <div className="rest-rows" key={rest.name}>
               <div className="rest-header">

@@ -1,3 +1,5 @@
+// reference: https://mariestarck.com/add-google-analytics-to-your-next-js-application-in-5-easy-steps/
+
 // log the pageview with their URL
 export const pageview = (url) => {
   if (typeof window !== "undefined") {
