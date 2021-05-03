@@ -8,6 +8,7 @@ import { library, config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
 import {RESTAURANT_DATA} from '../data.js'
+import * as ga from '../content/lib/ga'
 
 config.autoAddCss = false;
 library.add(faCheck);
@@ -73,6 +74,17 @@ export default function Home() {
   const { formatMessage } = useIntl();
   const format = id => formatMessage({ id });
 
+  const onClick = (type, restName, open) => {
+    if(open && typeof window !== "undefined") {
+      ga.event({
+        action: type,
+        params : {
+          restaurant_name: restName
+        }
+      });
+    }
+  }
+
   return (
     <div className="container">
       <Head>
@@ -121,12 +133,12 @@ export default function Home() {
                 <CheckLabel label={format("frontPageDelivery")} checked={rest.delivery} />
               </div>
               <div className="rest-buttons">
-                  <a href={rest.orderURL} style={{visibility: orderVisible}}>
+                  <a href={rest.orderURL} style={{visibility: orderVisible}} onClick={() => onClick("Order", rest.name, open)}>
                     <button disabled={!open} title={rest.orderURL} type="button" style={{visibility: orderVisible}}>
                       {open ? format("frontPageOrder") : format("frontPageClosed")}
                     </button>
                   </a>
-                  <a style={{visibility: callVisible }} href={`tel:${rest.phoneNumber}`}>
+                  <a style={{visibility: callVisible }} href={`tel:${rest.phoneNumber}`} onClick={() => onClick("Call", rest.name, open)}>
                     <button style={{visibility: callVisible }} disabled={!open} title={displayPhone(rest.phoneNumber)} type="button">
                       {/* I'm shimming the flex box with text here I know */}
                       <SecondButton open={open} format={format} />
