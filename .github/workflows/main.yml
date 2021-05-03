@@ -23,6 +23,7 @@ jobs:
         uses: actions/setup-node@v1
       - run: npm install
       - run: npm run build
+      # This is a really hacking patch that i got here: https://github.com/vercel/next.js/issues/18318#issuecomment-724071925
       - run: sed -i "14s/i18n&&\!options\.buildExport/false/" node_modules/next/dist/export/index.js
       - run: npm run export
       - run: cp out/fr.html out/index.html
