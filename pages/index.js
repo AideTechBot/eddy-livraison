@@ -200,15 +200,21 @@ export default function Home() {
 
       <style jsx>{`
         .rest-container {
-          border: 1px solid #eaeaea;
+          border: 2px solid #eaeaea;
           padding: 10px;
         }
 
         .rest-rows {
-          border: 1px solid #eaeaea;
+          border-top: 2px solid #eaeaea;
+          border-right: 2px solid #eaeaea;
+          border-left: 2px solid #eaeaea;
           padding: 10px;
           display: flex;
           justify-content: space-between;
+        }
+
+        .rest-rows:last-child {
+          border-bottom: 2px solid #eaeaea;
         }
 
         .disabled {
