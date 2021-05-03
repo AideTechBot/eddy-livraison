@@ -173,8 +173,9 @@ export default function Home() {
         })}
       </div>
 
-        <p style={{ paddingTop: '2em'}}>
-          {format("frontPageFeedback")}&nbsp;
+        <p style={{ textAlign: 'center',  paddingTop: '2em'}}>
+          {format("frontPageFeedback")}
+          <br/>
           <a 
             style={{ color: '#0070f3', textDecoration: 'none' }} 
             className="contact"
