@@ -85,12 +85,35 @@ export default function Home() {
     }
   }
 
+  const page = {
+    title: "Eddy-Livraison",
+    description: format("frontPageHeadline"),
+    url: `https://eddy-livraison.com/${locale}`,
+    image: "https://eddy-livraison.com/unfurl_logo.png",
+    author: "Eddy-Livraison",
+  }
   return (
     <div className="container">
       <Head>
-        <title>Eddy-Livraisons</title>
+        <title>{page.title}</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content={format("frontPageHeadline")} />
+        <meta name="description" content={page.description} />
+
+
+        <meta name="twitter:title" content={page.title} />
+        <meta
+          name="twitter:description"
+          content={page.description}
+        />
+        <meta name="twitter:image" content={page.image} />
+
+        <meta property="og:title" content={page.title} />
+        <meta
+          property="og:description"
+          content={page.description}
+        />
+        <meta property="og:url" content={page.url} />
+        <meta name="image" property="og:image" content={page.image} />
       </Head>
       <main>
         <h1 className="title">
