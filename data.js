@@ -395,22 +395,22 @@ export const RESTAURANT_DATA = [
             [8,20.00], 
        ]
     },
-    {
-        name: "Tim Hortons",
-        address: "100 Grey Rock Rd.",
-        dineIn: true,
-        takeOut: true,
-        delivery: false,
-        orderURL: "https://order.subway.com/en-ca/restaurant/19326-0/menu/?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=19326&utm_campaign=evergreen-2020&y_source=1_MTQ5MTgzNjgtNzE1LWxvY2F0aW9uLm9yZGVyX3VybA%3D%3D",
-        phoneNumber: "15067366601",
-        openHours: [
-            [9,20.00], //starts on sunday
-            [8,20.00], 
-            [8,20.00], 
-            [8,20.00], 
-            [8,20.00], 
-            [8,20.00], 
-            [8,20.00], 
-       ]
-    },
+    // {
+    //     name: "Tim Hortons",
+    //     address: "100 Grey Rock Rd.",
+    //     dineIn: true,
+    //     takeOut: true,
+    //     delivery: false,
+    //     orderURL: "https://order.subway.com/en-ca/restaurant/19326-0/menu/?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=19326&utm_campaign=evergreen-2020&y_source=1_MTQ5MTgzNjgtNzE1LWxvY2F0aW9uLm9yZGVyX3VybA%3D%3D",
+    //     phoneNumber: "15067366601",
+    //     openHours: [
+    //         [9,20.00], //starts on sunday
+    //         [8,20.00], 
+    //         [8,20.00], 
+    //         [8,20.00], 
+    //         [8,20.00], 
+    //         [8,20.00], 
+    //         [8,20.00], 
+    //    ]
+    // },
 ];
