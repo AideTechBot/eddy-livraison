@@ -19,14 +19,23 @@ function displayPhone(n) {
 }
 
 function isOpen(hours) {
+  console.log("isOpen");
   let d = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Moncton"}));
+  console.log(d);
   let n = d.getDay();
+  console.log(n);
   let now = d.getHours() + "." + d.getMinutes();
+  console.log(now);
   let day = hours[n];
+  console.log(day);
 
   if ((now > day[0] && now < day[1])) {
+    console.log(true);
+    console.log("isOpen End");
     return true;
   } else {
+    console.log(false);
+    console.log("isOpen End");
     return false;
   }
 }
