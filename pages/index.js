@@ -139,6 +139,11 @@ export default function Home() {
           const canOrder = rest.orderURL.length !== 0;
           const callVisible = canCall && open ? 'visible' : 'hidden';
           const orderVisible = (canOrder && open) || !open ? 'visible' : 'hidden';
+          console.log(open);
+          console.log(canCall);
+          console.log(canOrder);
+          console.log(callVisible);
+          console.log(orderVisible);
           return (
             <div className="rest-rows" key={rest.name}>
               <div className="rest-header">
