@@ -123,6 +123,10 @@ export default function Home() {
         />
         <meta property="og:url" content={page.url} />
         <meta name="image" property="og:image" content={page.image} />
+
+        <meta http-equiv='cache-control' content='no-cache' /> 
+        <meta http-equiv='expires' content='0' /> 
+        <meta http-equiv='pragma' content='no-cache' />
       </Head>
       <main>
         <h1 className="title">
