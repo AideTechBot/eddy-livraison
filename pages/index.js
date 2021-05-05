@@ -76,7 +76,15 @@ function SecondButton(prop) {
   return open ? <>{format("frontPageCall")}</> : <>{max}</>;
 };
 
-export default function Home() {
+export const getStaticProps = async () => {
+  return {
+    props: {
+      restaurantData: RESTAURANT_DATA,
+    },
+  }
+}
+
+export default function Home({ restaurantData }) {
   const router = useRouter();
   const { locale } = router;
   const nextLocale = locale === "en" ? "fr" : "en";
@@ -146,7 +154,7 @@ export default function Home() {
         </span>
 
       <div className="rest-container">
-        {RESTAURANT_DATA.map(rest => {
+        {restaurantData.map(rest => {
           const open = isOpen(rest.openHours);
           const canCall = rest.phoneNumber.length !== 0;
           const canOrder = rest.orderURL.length !== 0;
