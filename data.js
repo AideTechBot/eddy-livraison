@@ -288,6 +288,23 @@ export const RESTAURANT_DATA = [
        ]
     },
     {
+        name: "Pizza Shack",
+        address: "525 Rue Carrier",
+        dineIn: false,
+        takeOut: true,
+        delivery: false,
+        phoneNumber: "15067378890",
+        openHours: [
+            [14,19], // sunday
+            [0,0], // monday
+            [0,0], // tuesday
+            [11,19], // wednesday
+            [11,19], // thursday
+            [11,20], // friday
+            [11,19], // saturday
+        ]
+    },
+    {
         name: "JungWon Cuisine",
         address: "5 Rue Hill",
         dineIn: false,
