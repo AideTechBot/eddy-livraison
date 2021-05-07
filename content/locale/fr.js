@@ -1,5 +1,4 @@
 export const fr = {
-  "/": {
     frontPageHeader: "Où manger?",
     frontPageHeadline: "Une liste dédiée aux livraisons dans la région d'Edmundston.",
     frontPageLocaleLink: "English",
@@ -12,5 +11,4 @@ export const fr = {
     frontPageFeedback: "Y a-t-il une erreur sur cette page?",
     frontPageContactMe: "Contactez moi.",
     frontPageFooter: "Créée par",
-  }
 }

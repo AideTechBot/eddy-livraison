@@ -293,6 +293,7 @@ export const RESTAURANT_DATA = [
         dineIn: false,
         takeOut: true,
         delivery: false,
+        orderURL: "",
         phoneNumber: "15067378890",
         openHours: [
             [14,19], // sunday

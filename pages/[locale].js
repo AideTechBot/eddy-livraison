@@ -2,13 +2,13 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from "next/router"
 import React from 'react'
-import { useIntl } from 'react-intl'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library, config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
 import {RESTAURANT_DATA} from '../data.js'
 import * as ga from '../content/lib/ga'
+import * as locales from "../content/locale"
 
 config.autoAddCss = false;
 library.add(faCheck);
@@ -19,23 +19,23 @@ function displayPhone(n) {
 }
 
 function isOpen(hours) {
-  console.log("isOpen");
+  // console.log("isOpen");
   let d = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Moncton"}));
-  console.log(d);
+  // console.log(d);
   let n = d.getDay();
-  console.log(n);
+  // console.log(n);
   let now = d.getHours() + "." + d.getMinutes();
-  console.log(now);
+  // console.log(now);
   let day = hours[n];
-  console.log(day);
+  // console.log(day);
 
   if ((now > day[0] && now < day[1])) {
-    console.log(true);
-    console.log("isOpen End");
+    // console.log(true);
+    // console.log("isOpen End");
     return true;
   } else {
-    console.log(false);
-    console.log("isOpen End");
+    // console.log(false);
+    // console.log("isOpen End");
     return false;
   }
 }
@@ -76,7 +76,7 @@ function SecondButton(prop) {
   return open ? <>{format("frontPageCall")}</> : <>{max}</>;
 };
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   return {
     props: {
       restaurantData: RESTAURANT_DATA,
@@ -84,12 +84,33 @@ export const getStaticProps = async () => {
   }
 }
 
+export async function getStaticPaths() {
+  // this will be generated, hardcoded this pages for testing
+  return {
+    paths: [
+      {
+        params: {
+          locale: 'en'
+        },
+      },
+      {
+        params: {
+          locale: 'fr'
+        },
+      },
+    ],
+    fallback: false
+  };
+}
+
 export default function Home({ restaurantData }) {
   const router = useRouter();
-  const { locale } = router;
+  let { locale } = router.query;
+  locale = typeof locale === "undefined" ? "fr" : locale;
   const nextLocale = locale === "en" ? "fr" : "en";
-  const { formatMessage } = useIntl();
-  const format = id => formatMessage({ id });
+  const format = id => {
+    return locales[locale][id];
+  };
 
   const onClick = (type, restName, open) => {
     if(open && typeof window !== "undefined") {
@@ -132,9 +153,9 @@ export default function Home({ restaurantData }) {
         <meta property="og:url" content={page.url} />
         <meta name="image" property="og:image" content={page.image} />
 
-        <meta http-equiv='cache-control' content='no-cache' /> 
-        <meta http-equiv='expires' content='0' /> 
-        <meta http-equiv='pragma' content='no-cache' />
+        <meta httpEquiv='cache-control' content='no-cache' /> 
+        <meta httpEquiv='expires' content='0' /> 
+        <meta httpEquiv='pragma' content='no-cache' />
       </Head>
       <main>
         <h1 className="title">
@@ -160,12 +181,12 @@ export default function Home({ restaurantData }) {
           const canOrder = rest.orderURL.length !== 0;
           const callVisible = canCall && open ? 'visible' : 'hidden';
           const orderVisible = (canOrder && open) || !open ? 'visible' : 'hidden';
-          console.log(rest.name)
-          console.log(`open: ${open}`);
-          console.log(`canCall: ${canCall}`);
-          console.log(`canOrder: ${canOrder}`);
-          console.log(`callVisible: ${callVisible}`);
-          console.log(`orderVisible: ${orderVisible}`);
+          // console.log(rest.name)
+          // console.log(`open: ${open}`);
+          // console.log(`canCall: ${canCall}`);
+          // console.log(`canOrder: ${canOrder}`);
+          // console.log(`callVisible: ${callVisible}`);
+          // console.log(`orderVisible: ${orderVisible}`);
           return (
             <div className="rest-rows" key={rest.name}>
               <div className="rest-header">
