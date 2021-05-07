@@ -1,5 +1,4 @@
 export const en = {
-  "/": {
     frontPageHeader: "Where to eat?",
     frontPageHeadline: "A list dedicated to delivery food in the Edmundston region.",
     frontPageLocaleLink: "Français",
@@ -12,5 +11,4 @@ export const en = {
     frontPageFeedback: "Is there an error on this page?",
     frontPageContactMe: "Contact me.",
     frontPageFooter: "Made by",
-  }
 }
