@@ -250,14 +250,14 @@ export default function Home({ restaurantData }) {
       <style jsx>{`
         .rest-container {
           border: 2px solid #eaeaea;
-          padding: 10px;
+          padding: 5px;
         }
 
         .rest-rows {
           border-top: 2px solid #eaeaea;
           border-right: 2px solid #eaeaea;
           border-left: 2px solid #eaeaea;
-          padding: 10px;
+          padding: 5px;
           display: flex;
           justify-content: space-between;
         }
