@@ -1,7 +1,8 @@
 export const fr = {
+    frontPageSearchPlaceholder: "Recherchez...",
     frontPageHeader: "Où manger?",
     frontPageHeadline: "Une liste dédiée aux livraisons dans la région d'Edmundston.",
-    frontPageLocaleLink: "English",
+    frontPageLocaleLink: "See this page in English",
     frontPageDineIn: "\"Dine-in\"",
     frontPageTakeOut: "À emporter",
     frontPageDelivery: "Livraison",

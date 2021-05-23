@@ -1,7 +1,8 @@
 export const en = {
+    frontPageSearchPlaceholder: "Search...",
     frontPageHeader: "Where to eat?",
     frontPageHeadline: "A list dedicated to delivery food in the Edmundston region.",
-    frontPageLocaleLink: "Français",
+    frontPageLocaleLink: "Voir cette page en Français",
     frontPageDineIn: "Dine-in",
     frontPageTakeOut: "Take-Out",
     frontPageDelivery: "Delivery",

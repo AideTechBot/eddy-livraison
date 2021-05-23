@@ -151,8 +151,8 @@ export default function Home() {
   const handleSearch = (e) => {
     setSearchedRestaurants(restaurantData.filter(rest => {
       // fixes the strings up a bit so the matches work better
-      const query = e.target.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-      const restName= rest.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const query = e.target.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/'/g, '').replace(/[^a-z0-9]+/gi, " ");
+      const restName= rest.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/'/g, '').replace(/[^a-z0-9]+/gi, " ");
       return restName.includes(query);
     }));
   };
@@ -180,16 +180,10 @@ export default function Home() {
         <h1 className="title">{format("frontPageHeader")}</h1>
 
         <p className="description">{format("frontPageHeadline")}</p>
-        <span className="locale-link">
-          <Link href={`/${nextLocale}`} locale="fr">
-            <a style={{ color: "#0070f3", textDecoration: "none" }}>
-              {format("frontPageLocaleLink")}
-            </a>
-          </Link>
-        </span>
 
         <input
           onChange={handleSearch}
+          placeholder={format("frontPageSearchPlaceholder")}
           className="rest-search-bar"
         />
 
@@ -272,8 +266,15 @@ export default function Home() {
           })}
         </div>
         : <></> }
+        <span className="locale-link">
+          <Link href={`/${nextLocale}`} locale="fr">
+            <a style={{ color: "#0070f3", textDecoration: "none" }}>
+              {format("frontPageLocaleLink")}
+            </a>
+          </Link>
+        </span>
 
-        <p style={{ textAlign: "center", paddingTop: "2em" }}>
+        <p style={{ textAlign: "center" }}>
           {format("frontPageFeedback")}
           <br />
           <a
@@ -299,6 +300,13 @@ export default function Home() {
       </footer>
 
       <style jsx>{`
+        .rest-search-bar {
+          padding: 5px;
+          margin: 10px;
+          width: 80%;
+          content: 'lol';
+        }
+
         .rest-container {
           border: 2px solid #eaeaea;
           padding: 5px;
@@ -389,11 +397,12 @@ export default function Home() {
         }
 
         .locale-link {
-          padding-bottom: 2em;
+          padding-bottom: 1em;
+          padding-top: 2em;
         }
 
         main {
-          padding: 2.5rem 0;
+          padding: 2.5rem 0 1em 0;
           flex: 1;
           display: flex;
           flex-direction: column;
