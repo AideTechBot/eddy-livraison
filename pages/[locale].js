@@ -118,9 +118,6 @@ export default function Home() {
       setLoading(false);
     });
   }
-  if(isLoading) {
-    return <></>;
-  }
   const router = useRouter();
   let { locale } = router.query;
   locale = typeof locale === "undefined" ? "fr" : locale;
