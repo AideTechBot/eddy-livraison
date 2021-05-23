@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from "next/router"
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library, config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
-import {RESTAURANT_DATA} from '../data.js'
+// import {RESTAURANT_DATA} from '../data.js'
 import * as ga from '../content/lib/ga'
 import * as locales from "../content/locale"
 
@@ -79,7 +79,7 @@ function SecondButton(prop) {
 export async function getStaticProps() {
   return {
     props: {
-      restaurantData: RESTAURANT_DATA,
+      restaurantData: null,
     },
   }
 }
@@ -103,7 +103,23 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Home({ restaurantData }) {
+export default function Home() {
+  const [isLoading, setLoading] = useState(true);
+  const [restaurantData, setRestaurantData] = useState([]);
+
+  useEffect(() => {
+    loadRestaurantData();
+  }, []);
+
+  const loadRestaurantData = () => {
+    const data = fetch('./data.json').then(response => response.json()).then(data => {
+      setRestaurantData(data);
+      setLoading(false);
+    });
+  }
+  if(isLoading) {
+    return <></>;
+  }
   const router = useRouter();
   let { locale } = router.query;
   locale = typeof locale === "undefined" ? "fr" : locale;
@@ -130,6 +146,7 @@ export default function Home({ restaurantData }) {
     image: "https://eddy-livraison.com/unfurl_logo.png",
     author: "Eddy-Livraison",
   }
+  console.log(restaurantData);
   return (
     <div className="container">
       <Head>
@@ -179,8 +196,8 @@ export default function Home({ restaurantData }) {
           const open = isOpen(rest.openHours);
           const canCall = rest.phoneNumber.length !== 0;
           const canOrder = rest.orderURL.length !== 0;
-          const callVisible = canCall && open ? 'visible' : 'hidden';
-          const orderVisible = (canOrder && open) || !open ? 'visible' : 'hidden';
+          const callVisible = canCall && open ? { visibility: 'visible' } : { visibility: 'hidden' };
+          const orderVisible = (canOrder && open) || !open ? { visibility: 'visible' } : { visibility: 'hidden' };
           // console.log(rest.name)
           // console.log(`open: ${open}`);
           // console.log(`canCall: ${canCall}`);
@@ -204,13 +221,13 @@ export default function Home({ restaurantData }) {
                 <CheckLabel label={format("frontPageDelivery")} checked={rest.delivery} />
               </div>
               <div className="rest-buttons">
-                  <a href={rest.orderURL} style={{visibility: orderVisible}} onClick={() => onClick("Order", rest.name, open)}>
-                    <button disabled={!open} title={rest.orderURL} type="button" style={{visibility: orderVisible}}>
+                  <a href={rest.orderURL} style={orderVisible} onClick={() => onClick("Order", rest.name, open)}>
+                    <button disabled={!open} title={rest.orderURL} type="button" style={orderVisible}>
                       {open ? format("frontPageOrder") : format("frontPageClosed")}
                     </button>
                   </a>
-                  <a style={{visibility: callVisible }} href={`tel:${rest.phoneNumber}`} onClick={() => onClick("Call", rest.name, open)}>
-                    <button style={{visibility: callVisible }} disabled={!open} title={displayPhone(rest.phoneNumber)} type="button">
+                  <a style={callVisible} href={`tel:${rest.phoneNumber}`} onClick={() => onClick("Call", rest.name, open)}>
+                    <button style={callVisible} disabled={!open} title={displayPhone(rest.phoneNumber)} type="button">
                       {/* I'm shimming the flex box with text here I know */}
                       <SecondButton open={open} format={format} />
                     </button>
