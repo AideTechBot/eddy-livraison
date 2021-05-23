@@ -105,6 +105,7 @@ export async function getStaticPaths() {
 export default function Home() {
   const [isLoading, setLoading] = useState(true);
   const [restaurantData, setRestaurantData] = useState([]);
+  const [searchedRestaurants, setSearchedRestaurants] = useState(restaurantData);
 
   useEffect(() => {
     loadRestaurantData();
@@ -113,6 +114,7 @@ export default function Home() {
   const loadRestaurantData = () => {
     const data = fetch('./data.json').then(response => response.json()).then(data => {
       setRestaurantData(data);
+      setSearchedRestaurants(data);
       setLoading(false);
     });
   }
@@ -145,6 +147,15 @@ export default function Home() {
     image: "https://eddy-livraison.com/unfurl_logo.png",
     author: "Eddy-Livraison",
   }
+
+  const handleSearch = (e) => {
+    setSearchedRestaurants(restaurantData.filter(rest => {
+      // fixes the strings up a bit so the matches work better
+      const query = e.target.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const restName= rest.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      return restName.includes(query);
+    }));
+  };
   return (
     <div className="container">
       <Head>
@@ -152,102 +163,124 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content={page.description} />
 
-
         <meta name="twitter:title" content={page.title} />
-        <meta
-          name="twitter:description"
-          content={page.description}
-        />
+        <meta name="twitter:description" content={page.description} />
         <meta name="twitter:image" content={page.image} />
 
         <meta property="og:title" content={page.title} />
-        <meta
-          property="og:description"
-          content={page.description}
-        />
+        <meta property="og:description" content={page.description} />
         <meta property="og:url" content={page.url} />
         <meta name="image" property="og:image" content={page.image} />
 
-        <meta httpEquiv='cache-control' content='no-cache' /> 
-        <meta httpEquiv='expires' content='0' /> 
-        <meta httpEquiv='pragma' content='no-cache' />
+        <meta httpEquiv="cache-control" content="no-cache" />
+        <meta httpEquiv="expires" content="0" />
+        <meta httpEquiv="pragma" content="no-cache" />
       </Head>
       <main>
-        <h1 className="title">
-          {format("frontPageHeader")}
-        </h1>
+        <h1 className="title">{format("frontPageHeader")}</h1>
 
-        <p className="description">
-          {format("frontPageHeadline")}
-        </p>
+        <p className="description">{format("frontPageHeadline")}</p>
         <span className="locale-link">
-          <Link
-            href={`/${nextLocale}`} 
-            locale="fr"
-          >
-            <a style={{ color: "#0070f3", textDecoration: 'none' }}>{format("frontPageLocaleLink")}</a>
+          <Link href={`/${nextLocale}`} locale="fr">
+            <a style={{ color: "#0070f3", textDecoration: "none" }}>
+              {format("frontPageLocaleLink")}
+            </a>
           </Link>
         </span>
 
-      <div className="rest-container">
-        {restaurantData.map(rest => {
-          const open = isOpen(rest.openHours);
-          const canCall = rest.phoneNumber.length !== 0;
-          const canOrder = rest.orderURL.length !== 0;
-          const callVisible = canCall && open ? { visibility: 'visible' } : { visibility: 'hidden' };
-          const orderVisible = (canOrder && open) || !open ? { visibility: 'visible' } : { visibility: 'hidden' };
-          // console.log(rest.name)
-          // console.log(`open: ${open}`);
-          // console.log(`canCall: ${canCall}`);
-          // console.log(`canOrder: ${canOrder}`);
-          // console.log(`callVisible: ${callVisible}`);
-          // console.log(`orderVisible: ${orderVisible}`);
-          return (
-            <div className="rest-rows" key={rest.name}>
-              <div className="rest-header">
-                <h2>
-                  {rest.name}
-                </h2>
-                <br/>
-                <span>
-                  {rest.address}
-                </span>
-              </div>
-              <div className="rest-after">
-                <CheckLabel label={format("frontPageDineIn")} checked={rest.dineIn} />
-                <CheckLabel label={format("frontPageTakeOut")} checked={rest.takeOut} />
-                <CheckLabel label={format("frontPageDelivery")} checked={rest.delivery} />
-              </div>
-              <div className="rest-buttons">
-                  <a href={rest.orderURL} style={orderVisible} onClick={() => onClick("Order", rest.name, open)}>
-                    <button disabled={!open} title={rest.orderURL} type="button" style={orderVisible}>
-                      {open ? format("frontPageOrder") : format("frontPageClosed")}
+        <input
+          onChange={handleSearch}
+        />
+
+        <div className="rest-container">
+          {searchedRestaurants.map((rest) => {
+            const open = isOpen(rest.openHours);
+            const canCall = rest.phoneNumber.length !== 0;
+            const canOrder = rest.orderURL.length !== 0;
+            const callVisible =
+              canCall && open
+                ? { visibility: "visible" }
+                : { visibility: "hidden" };
+            const orderVisible =
+              (canOrder && open) || !open
+                ? { visibility: "visible" }
+                : { visibility: "hidden" };
+            // console.log(rest.name)
+            // console.log(`open: ${open}`);
+            // console.log(`canCall: ${canCall}`);
+            // console.log(`canOrder: ${canOrder}`);
+            // console.log(`callVisible: ${callVisible}`);
+            // console.log(`orderVisible: ${orderVisible}`);
+            return (
+              <div className="rest-rows" key={rest.name}>
+                <div className="rest-header">
+                  <h2>{rest.name}</h2>
+                  <br />
+                  <span>{rest.address}</span>
+                </div>
+                <div className="rest-after">
+                  <CheckLabel
+                    label={format("frontPageDineIn")}
+                    checked={rest.dineIn}
+                  />
+                  <CheckLabel
+                    label={format("frontPageTakeOut")}
+                    checked={rest.takeOut}
+                  />
+                  <CheckLabel
+                    label={format("frontPageDelivery")}
+                    checked={rest.delivery}
+                  />
+                </div>
+                <div className="rest-buttons">
+                  <a
+                    href={rest.orderURL}
+                    style={orderVisible}
+                    onClick={() => onClick("Order", rest.name, open)}
+                  >
+                    <button
+                      disabled={!open}
+                      title={rest.orderURL}
+                      type="button"
+                      style={orderVisible}
+                    >
+                      {open
+                        ? format("frontPageOrder")
+                        : format("frontPageClosed")}
                     </button>
                   </a>
-                  <a style={callVisible} href={`tel:${rest.phoneNumber}`} onClick={() => onClick("Call", rest.name, open)}>
-                    <button style={callVisible} disabled={!open} title={displayPhone(rest.phoneNumber)} type="button">
+                  <a
+                    style={callVisible}
+                    href={`tel:${rest.phoneNumber}`}
+                    onClick={() => onClick("Call", rest.name, open)}
+                  >
+                    <button
+                      style={callVisible}
+                      disabled={!open}
+                      title={displayPhone(rest.phoneNumber)}
+                      type="button"
+                    >
                       {/* I'm shimming the flex box with text here I know */}
                       <SecondButton open={open} format={format} />
                     </button>
                   </a>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
 
-        <p style={{ textAlign: 'center',  paddingTop: '2em'}}>
+        <p style={{ textAlign: "center", paddingTop: "2em" }}>
           {format("frontPageFeedback")}
-          <br/>
-          <a 
-            style={{ color: '#0070f3', textDecoration: 'none' }} 
+          <br />
+          <a
+            style={{ color: "#0070f3", textDecoration: "none" }}
             className="contact"
             href="mailto:help@eddy-livraison.com?subject=[Issue with Eddy-Livraison]"
           >
             {format("frontPageContactMe")}
           </a>
         </p>
-
       </main>
 
       <footer>
@@ -461,5 +494,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
