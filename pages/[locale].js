@@ -79,7 +79,6 @@ function SecondButton(prop) {
 export async function getStaticProps() {
   return {
     props: {
-      restaurantData: null,
     },
   }
 }
@@ -146,7 +145,6 @@ export default function Home() {
     image: "https://eddy-livraison.com/unfurl_logo.png",
     author: "Eddy-Livraison",
   }
-  console.log(restaurantData);
   return (
     <div className="container">
       <Head>
