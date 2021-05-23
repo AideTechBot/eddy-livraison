@@ -190,8 +190,10 @@ export default function Home() {
 
         <input
           onChange={handleSearch}
+          className="rest-search-bar"
         />
 
+        {searchedRestaurants.length !== 0 ?
         <div className="rest-container">
           {searchedRestaurants.map((rest) => {
             const open = isOpen(rest.openHours);
@@ -269,6 +271,7 @@ export default function Home() {
             );
           })}
         </div>
+        : <></> }
 
         <p style={{ textAlign: "center", paddingTop: "2em" }}>
           {format("frontPageFeedback")}
