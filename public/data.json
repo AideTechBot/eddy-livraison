@@ -429,6 +429,84 @@
       ]
    },
    {
+      "name":"Le Patrimoine",
+      "address":"115 Rue Rivière à la Truite",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "orderURL":"https://pizzalepatrimoine.com/commande-en-ligne.html#/",
+      "phoneNumber":"15067356041",
+      "openHours":[
+         [
+            16.00,
+            20.00
+         ],
+         [
+            0,
+            0
+         ],
+         [
+            0,
+            0
+         ],
+         [
+            16.00,
+            20.00
+         ],
+         [
+            16.00,
+            20.00
+         ],
+         [
+            16.00,
+            22.00
+         ],
+         [
+            16.00,
+            22.00
+         ]
+      ]
+   },
+   {
+      "name":"Café Flora",
+      "address":"15 Boulevard Isidore-Boucher",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "orderURL":"https://cafeflora.mobi-order.com/",
+      "phoneNumber":"15067374444",
+      "openHours":[
+         [
+            9.00,
+            14.00
+         ],
+         [
+            11,
+            14
+         ],
+         [
+            11,
+            14
+         ],
+         [
+            11,
+            14
+         ],
+         [
+            11,
+            14
+         ],
+         [
+            11,
+            14
+         ],
+         [
+            9.00,
+            14.00
+         ]
+      ]
+   },
+   {
       "name":"Déjeuner AM Breakfast",
       "address":"1791-B Rue Principale M.M.F.N.",
       "dineIn":true,
