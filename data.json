@@ -351,6 +351,45 @@
       ]
    },
    {
+      "name":"Moonshin'hers",
+      "address":"45 Rue de l'Église",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "orderURL":"https://moonshinhers.myshopify.com/",
+      "phoneNumber":"15067350101",
+      "openHours":[
+         [
+            0,
+            0
+         ],
+         [
+            10,
+            14.00
+         ],
+         [
+            10,
+            14.00
+         ],
+         [
+            10,
+            22.00
+         ],
+         [
+            10,
+            22.00
+         ],
+         [
+            10,
+            22.00
+         ],
+         [
+            16.30,
+            22.00
+         ]
+      ]
+   },
+   {
       "name":"Déjeuner AM Breakfast",
       "address":"1791-B Rue Principale M.M.F.N.",
       "dineIn":true,
