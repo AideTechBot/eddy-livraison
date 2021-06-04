@@ -390,6 +390,45 @@
       ]
    },
    {
+      "name":"Casse-Croûte Caro",
+      "address":"180 Boulevard Hébert",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "orderURL":"",
+      "phoneNumber":"15063533050",
+      "openHours":[
+         [
+            11.00,
+            19.00
+         ],
+         [
+            6.30,
+            19.00
+         ],
+         [
+            6.30,
+            19.00
+         ],
+         [
+            6.30,
+            19.00
+         ],
+         [
+            6.30,
+            20.00
+         ],
+         [
+            6.30,
+            20.00
+         ],
+         [
+            7.00,
+            20.00
+         ]
+      ]
+   },
+   {
       "name":"Déjeuner AM Breakfast",
       "address":"1791-B Rue Principale M.M.F.N.",
       "dineIn":true,
