@@ -782,7 +782,7 @@
    {
       "name":"Pizza Shack",
       "address":"525 Rue Carrier",
-      "dineIn":false,
+      "dineIn":true,
       "takeOut":true,
       "delivery":false,
       "orderURL":"",
