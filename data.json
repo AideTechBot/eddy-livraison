@@ -316,7 +316,7 @@
       "address":"180 Boulevard Hébert",
       "dineIn":true,
       "takeOut":true,
-      "delivery":true,
+      "delivery":false,
       "orderURL":"https://www.kfc.ca/menu/overview",
       "phoneNumber":"15067399777",
       "openHours":[
