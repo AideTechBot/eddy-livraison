@@ -780,6 +780,45 @@
       ]
    },
    {
+      "name":"Burger King",
+      "address":"10 Mahsus Court",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "orderURL":"https://www.burgerking.ca/menu",
+      "phoneNumber":"15067398584",
+      "openHours":[
+         [
+            7,
+            23.59
+         ],
+         [
+            7,
+            23.59
+         ],
+         [
+            7,
+            23.59
+         ],
+         [
+            7,
+            23.59
+         ],
+         [
+            7,
+            23.59
+         ],
+         [
+            7,
+            23.59
+         ],
+         [
+            7,
+            23.59
+         ]
+      ]
+   },
+   {
       "name":"Le Marché Express",
       "address":"714 Pouvoir Rd",
       "dineIn":false,
