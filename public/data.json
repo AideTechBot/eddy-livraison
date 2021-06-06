@@ -780,6 +780,45 @@
       ]
    },
    {
+      "name":"Le Marché Express",
+      "address":"714 Pouvoir Rd",
+      "dineIn":false,
+      "takeOut":true,
+      "delivery":false,
+      "orderURL":"",
+      "phoneNumber":"15067395050",
+      "openHours":[
+         [
+            7,
+            21
+         ],
+         [
+            6,
+            21
+         ],
+         [
+            6,
+            21
+         ],
+         [
+            6,
+            21
+         ],
+         [
+            6,
+            21
+         ],
+         [
+            6,
+            22
+         ],
+         [
+            6,
+            22
+         ]
+      ]
+   },
+   {
       "name":"Pizza Shack",
       "address":"525 Rue Carrier",
       "dineIn":true,
