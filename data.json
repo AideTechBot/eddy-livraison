@@ -274,7 +274,7 @@
    },
    {
       "name":"The Pirate",
-      "address":"1791 Rue Principale",
+      "address":"1791 Rue Principale M.M.F.N.",
       "dineIn":true,
       "takeOut":true,
       "delivery":true,
@@ -776,6 +776,45 @@
          [
             0,
             0
+         ]
+      ]
+   },
+   {
+      "name":"Cantine Chez Cadan",
+      "address":"635 Rue Principle St.B.",
+      "dineIn":false,
+      "takeOut":true,
+      "delivery":false,
+      "orderURL":"",
+      "phoneNumber":"15065800277",
+      "openHours":[
+         [
+            11,
+            19
+         ],
+         [
+            11,
+            19
+         ],
+         [
+            11,
+            19
+         ],
+         [
+            11,
+            20
+         ],
+         [
+            11,
+            20
+         ],
+         [
+            11,
+            20
+         ],
+         [
+            11,
+            20
          ]
       ]
    },
