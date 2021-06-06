@@ -858,45 +858,6 @@
       ]
    },
    {
-      "name":"Kinh Do Restaurant Vietnamese",
-      "address":"53 Chemin Canada",
-      "dineIn":false,
-      "takeOut":true,
-      "delivery":false,
-      "orderURL":"",
-      "phoneNumber":"15067397541",
-      "openHours":[
-         [
-            16,
-            20.00
-         ],
-         [
-            11,
-            20.00
-         ],
-         [
-            11,
-            20.00
-         ],
-         [
-            11,
-            20.00
-         ],
-         [
-            11,
-            20.00
-         ],
-         [
-            11,
-            20.00
-         ],
-         [
-            11,
-            20.00
-         ]
-      ]
-   },
-   {
       "name":"Tam's Chinese Food",
       "address":"261 Rue Victoria",
       "dineIn":false,
