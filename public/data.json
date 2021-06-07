@@ -156,6 +156,45 @@
       ]
    },
    {
+      "name":"Resto La Bonne Assiette",
+      "address":"14 Rue Principale, St. Anne",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":true,
+      "orderURL":"https://www.restolba.net/",
+      "phoneNumber":"15064452803",
+      "openHours":[
+         [
+            6,
+            19.00
+         ],
+         [
+            6,
+            19.00
+         ],
+         [
+            6,
+            19.00
+         ],
+         [
+            6,
+            19.00
+         ],
+         [
+            6,
+            19.00
+         ],
+         [
+            6,
+            19.00
+         ],
+         [
+            6,
+            19.00
+         ]
+      ]
+   },
+   {
       "name":"St-Hubert Express",
       "address":"10 Mahsus Court",
       "dineIn":true,
@@ -274,7 +313,7 @@
    },
    {
       "name":"The Pirate",
-      "address":"1791 Rue Principale M.M.F.N.",
+      "address":"1791 Rue Principale, M.M.F.N.",
       "dineIn":true,
       "takeOut":true,
       "delivery":true,
@@ -547,7 +586,7 @@
    },
    {
       "name":"Déjeuner AM Breakfast",
-      "address":"1791-B Rue Principale M.M.F.N.",
+      "address":"1791-B Rue Principale, M.M.F.N.",
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
@@ -820,7 +859,7 @@
    },
    {
       "name":"Cantine Chez Cadan",
-      "address":"635 Rue Principle St.B.",
+      "address":"605 Rue Principale, St. Basile",
       "dineIn":false,
       "takeOut":true,
       "delivery":false,
