@@ -312,6 +312,45 @@
       ]
    },
    {
+      "name":"Restaurant Du Quartier",
+      "address":"5 Rue Maillet",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "orderURL":"",
+      "phoneNumber":"15062638514",
+      "openHours":[
+         [
+            7,
+            22.00
+         ],
+         [
+            6,
+            22.00
+         ],
+         [
+            6,
+            22.00
+         ],
+         [
+            6,
+            22.00
+         ],
+         [
+            6,
+            22.00
+         ],
+         [
+            6,
+            22.00
+         ],
+         [
+            6,
+            22.00
+         ]
+      ]
+   },
+   {
       "name":"KFC",
       "address":"180 Boulevard Hébert",
       "dineIn":true,
