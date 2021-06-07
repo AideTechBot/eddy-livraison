@@ -404,7 +404,7 @@
       "address":"180 Boulevard Hébert",
       "dineIn":true,
       "takeOut":true,
-      "delivery":false,
+      "delivery":true,
       "local":false,
       "orderURL":"https://www.kfc.ca/menu/overview",
       "phoneNumber":"15067399777",
@@ -1162,7 +1162,7 @@
    {
       "name":"McDonald's",
       "address":"190 Boulevard Hébert",
-      "dineIn":false,
+      "dineIn":true,
       "takeOut":true,
       "delivery":false,
       "local":false,
