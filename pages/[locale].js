@@ -9,6 +9,7 @@ import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
 // import {RESTAURANT_DATA} from '../data.js'
 import * as ga from '../content/lib/ga'
 import * as locales from "../content/locale"
+import { sortRestaurants } from "../utils";
 
 config.autoAddCss = false;
 library.add(faCheck);
@@ -19,23 +20,14 @@ function displayPhone(n) {
 }
 
 function isOpen(hours) {
-  // console.log("isOpen");
   let d = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Moncton"}));
-  // console.log(d);
   let n = d.getDay();
-  // console.log(n);
   let now = d.getHours() + "." + d.getMinutes();
-  // console.log(now);
   let day = hours[n];
-  // console.log(day);
 
   if ((now > day[0] && now < day[1])) {
-    // console.log(true);
-    // console.log("isOpen End");
     return true;
   } else {
-    // console.log(false);
-    // console.log("isOpen End");
     return false;
   }
 }
@@ -114,7 +106,7 @@ export default function Home() {
   const loadRestaurantData = () => {
     const data = fetch('./data.json').then(response => response.json()).then(data => {
       setRestaurantData(data);
-      setSearchedRestaurants(data);
+      setSearchedRestaurants(sortRestaurants(data));
       setLoading(false);
     });
   }
@@ -146,12 +138,13 @@ export default function Home() {
   }
 
   const handleSearch = (e) => {
-    setSearchedRestaurants(restaurantData.filter(rest => {
+    const f = restaurantData.filter(rest => {
       // fixes the strings up a bit so the matches work better
       const query = e.target.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/'/g, '').replace(/[^a-z0-9]+/gi, " ");
       const restName= rest.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/'/g, '').replace(/[^a-z0-9]+/gi, " ");
       return restName.includes(query);
-    }));
+    });
+    setSearchedRestaurants(sortRestaurants(f));
   };
   return (
     <div className="container">

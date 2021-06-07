@@ -5,6 +5,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":true,
+      "local":false,
       "orderURL":"https://bostonpizza.com/en/menu.edmundston.html",
       "phoneNumber":"15067396688",
       "openHours":[
@@ -44,6 +45,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":true,
+      "local":true,
       "orderURL":"https://pur-simple.order-online.ai/en-CA/#/",
       "phoneNumber":"15067337310",
       "openHours":[
@@ -83,6 +85,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":true,
+      "local":false,
       "orderURL":"https://greco.ca/location-results/?city_term_id=34",
       "phoneNumber":"15063103030",
       "openHours":[
@@ -122,6 +125,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":true,
+      "local":false,
       "orderURL":"https://orders.pizzadelight.com/2691/flow/delivery",
       "phoneNumber":"15067394419",
       "openHours":[
@@ -161,6 +165,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":true,
+      "local":true,
       "orderURL":"https://www.restolba.net/",
       "phoneNumber":"15064452803",
       "openHours":[
@@ -169,7 +174,7 @@
             19.00
          ],
          [
-            6,
+            1.56,
             19.00
          ],
          [
@@ -200,6 +205,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":true,
+      "local":false,
       "orderURL":"https://order.st-hubert.com/",
       "phoneNumber":"15067390080",
       "openHours":[
@@ -239,6 +245,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":true,
+      "local":true,
       "orderURL":"https://mapleleafqueensbuffet.com/edmunston-menu/",
       "phoneNumber":"15067353888",
       "openHours":[
@@ -278,6 +285,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":true,
+      "local":false,
       "orderURL":"https://thaizoneorders.bon-app.ca/",
       "phoneNumber":"15067355002",
       "openHours":[
@@ -317,6 +325,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":true,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15067357111",
       "openHours":[
@@ -356,6 +365,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15062638514",
       "openHours":[
@@ -395,6 +405,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":false,
       "orderURL":"https://www.kfc.ca/menu/overview",
       "phoneNumber":"15067399777",
       "openHours":[
@@ -434,6 +445,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"https://moonshinhers.myshopify.com/",
       "phoneNumber":"15067350101",
       "openHours":[
@@ -473,6 +485,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15063533050",
       "openHours":[
@@ -512,6 +525,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"https://pizzalepatrimoine.com/commande-en-ligne.html#/",
       "phoneNumber":"15067356041",
       "openHours":[
@@ -551,6 +565,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"https://cafeflora.mobi-order.com/",
       "phoneNumber":"15067374444",
       "openHours":[
@@ -590,6 +605,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15067351313",
       "openHours":[
@@ -629,6 +645,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15067353151",
       "openHours":[
@@ -668,6 +685,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15067395321",
       "openHours":[
@@ -707,6 +725,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15067398259",
       "openHours":[
@@ -746,6 +765,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15063531010",
       "openHours":[
@@ -785,6 +805,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15063533325",
       "openHours":[
@@ -824,6 +845,7 @@
       "dineIn":false,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"http://www.ecluse.ca/",
       "phoneNumber":"15063530521",
       "openHours":[
@@ -863,6 +885,7 @@
       "dineIn":false,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15065800277",
       "openHours":[
@@ -902,6 +925,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":false,
       "orderURL":"https://www.burgerking.ca/menu",
       "phoneNumber":"15067398584",
       "openHours":[
@@ -941,6 +965,7 @@
       "dineIn":false,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15067395050",
       "openHours":[
@@ -980,6 +1005,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15067378890",
       "openHours":[
@@ -1019,6 +1045,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15062928012",
       "openHours":[
@@ -1058,6 +1085,7 @@
       "dineIn":false,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15067353349",
       "openHours":[
@@ -1097,6 +1125,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":true,
       "orderURL":"",
       "phoneNumber":"15067398886",
       "openHours":[
@@ -1136,6 +1165,7 @@
       "dineIn":false,
       "takeOut":true,
       "delivery":false,
+      "local":false,
       "orderURL":"https://www4.mcdonalds.ca/mcdeliverycanada/",
       "phoneNumber":"15067356232",
       "openHours":[
@@ -1175,6 +1205,7 @@
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
+      "local":false,
       "orderURL":"https://order.subway.com/en-ca/restaurant/19326-0/menu/?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=19326&utm_campaign=evergreen-2020&y_source=1_MTQ5MTgzNjgtNzE1LWxvY2F0aW9uLm9yZGVyX3VybA%3D%3D",
       "phoneNumber":"15067366601",
       "openHours":[
