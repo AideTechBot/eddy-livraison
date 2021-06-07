@@ -139,10 +139,13 @@ export default function Home() {
 
   const handleSearch = (e) => {
     const f = restaurantData.filter(rest => {
+      // this is to make sure you can search the address as well
+      // and that stores with multiple locations are unique
+      const key = rest.name + " " + rest.address;
       // fixes the strings up a bit so the matches work better
       const query = e.target.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/'/g, '').replace(/[^a-z0-9]+/gi, " ");
-      const restName= rest.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/'/g, '').replace(/[^a-z0-9]+/gi, " ");
-      return restName.includes(query);
+      const restKey = key.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/'/g, '').replace(/[^a-z0-9]+/gi, " ");
+      return restKey.includes(query);
     });
     setSearchedRestaurants(sortRestaurants(f));
   };
@@ -191,14 +194,8 @@ export default function Home() {
               (canOrder && open) || !open
                 ? { visibility: "visible" }
                 : { visibility: "hidden" };
-            // console.log(rest.name)
-            // console.log(`open: ${open}`);
-            // console.log(`canCall: ${canCall}`);
-            // console.log(`canOrder: ${canOrder}`);
-            // console.log(`callVisible: ${callVisible}`);
-            // console.log(`orderVisible: ${orderVisible}`);
             return (
-              <div className="rest-rows" key={rest.name}>
+              <div className="rest-rows" key={rest.name + " " + rest.address}>
                 <div className="rest-header">
                   <h2>{rest.name}</h2>
                   <br />
