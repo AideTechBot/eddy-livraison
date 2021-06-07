@@ -360,6 +360,46 @@
       ]
    },
    {
+      "name":"The Pirate",
+      "address":"100 Grey Rock Rd, M.M.F.N.",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":true,
+      "orderURL":"",
+      "phoneNumber":"15067357111",
+      "openHours":[
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ]
+      ]
+   },
+   {
       "name":"Restaurant Du Quartier",
       "address":"5 Rue Maillet",
       "dineIn":true,
@@ -1156,6 +1196,46 @@
          [
             7,
             21
+         ]
+      ]
+   },
+   {
+      "name":"Dairy Queen",
+      "address":"207 Rue Victoria",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":false,
+      "orderURL":"",
+      "phoneNumber":"15067392002",
+      "openHours":[
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
          ]
       ]
    },
