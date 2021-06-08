@@ -1,11 +1,18 @@
 /**
+ * @returns {Date} Edmundston's current datetime
+ */
+function getEdmundstonDate() {
+	return new Date(new Date().toLocaleString("en-US", {timeZone: "America/Moncton"}));
+}
+
+/**
  * Returns today's opening hours
  * 
  * @param {number[][]} hours
  * @returns {{open: number, close: number}}
  */
 function getTodaysHours(hours) {
-	const today = new Date();
+	const today = getEdmundstonDate();
 	const dayIndex = today.getDay()
 
 	return {
@@ -20,7 +27,8 @@ function getTodaysHours(hours) {
  * @returns {number} Current time
  */
 function getNow() {
-  const today = new Date();
+  const today = getEdmundstonDate();
+	
   return parseFloat(`${today.getHours()}.${today.getMinutes()}`);
 }
 
@@ -31,6 +39,6 @@ function getNow() {
 export function isOpen(hours) {
   const now = getNow();
 	const todaysHours = getTodaysHours(hours);
-
+	
   return now > todaysHours.open && now < todaysHours.close
 }
