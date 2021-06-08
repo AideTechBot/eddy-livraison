@@ -720,6 +720,46 @@
       ]
    },
    {
+      "name":"Bossé MiniMart",
+      "address":"322 Blvd Isidore-Boucher, St. Jaques",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":true,
+      "orderURL":"https://bosseminimart.com/contact/",
+      "phoneNumber":"15067357044",
+      "openHours":[
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ]
+      ]
+   },
+   {
       "name":"Ouellet Fish and Family Restaurant",
       "address":"359 Rue Victoria",
       "dineIn":true,
