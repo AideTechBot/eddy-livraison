@@ -800,6 +800,46 @@
       ]
    },
    {
+      "name":"Cantine Chez Mel",
+      "address":"137 Blvd Isidore-Boucher, St. Jacques",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":true,
+      "orderURL":"",
+      "phoneNumber":"15067354657",
+      "openHours":[
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ]
+      ]
+   },
+   {
       "name":"Ouellet Fish and Family Restaurant",
       "address":"359 Rue Victoria",
       "dineIn":true,
