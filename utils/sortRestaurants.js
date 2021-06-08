@@ -12,7 +12,7 @@ function getRestaurantScore(rest) {
     result += rest.dineIn ? 1 : 0;
     result += rest.takeOut ? 2 : 0; 
     result += rest.delivery ? 3 : 0; // delivery is worth more than all
-		result += isOpen(rest.openHours) ? 4 : 0 // Open restaurant should have high priority
+	result += isOpen(rest.openHours) ? 10 : 0 // Open restaurant should have highest priority
     result += rest.local ? 1 : 0;
 
     // Favour restaurants that have both phone and online
