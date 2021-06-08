@@ -360,6 +360,46 @@
       ]
    },
    {
+      "name":"The Pirate",
+      "address":"100 Grey Rock Rd, M.M.F.N.",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":true,
+      "orderURL":"",
+      "phoneNumber":"15067357111",
+      "openHours":[
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ],
+         [
+            6,
+            23.59
+         ]
+      ]
+   },
+   {
       "name":"Restaurant Du Quartier",
       "address":"5 Rue Maillet",
       "dineIn":true,
@@ -404,7 +444,7 @@
       "address":"180 Boulevard Hébert",
       "dineIn":true,
       "takeOut":true,
-      "delivery":false,
+      "delivery":true,
       "local":false,
       "orderURL":"https://www.kfc.ca/menu/overview",
       "phoneNumber":"15067399777",
@@ -641,7 +681,7 @@
    },
    {
       "name":"The Valley View Restaurant",
-      "address":"100 Chief Joanna Blvd",
+      "address":"100 Chief Joanna Blvd, M.M.F.N",
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
@@ -676,6 +716,126 @@
          [
             16,
             22.00
+         ]
+      ]
+   },
+   {
+      "name":"Bossé MiniMart",
+      "address":"322 Blvd Isidore-Boucher, St. Jaques",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":true,
+      "orderURL":"https://bosseminimart.com/contact/",
+      "phoneNumber":"15067357044",
+      "openHours":[
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ]
+      ]
+   },
+   {
+      "name":"Josée Pizza Inc",
+      "address":"322 Blvd Isidore-Boucher, St. Jaques",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":true,
+      "orderURL":"https://bosseminimart.com/contact/",
+      "phoneNumber":"15067357044",
+      "openHours":[
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ],
+         [
+            11,
+            21
+         ]
+      ]
+   },
+   {
+      "name":"Cantine Chez Mel",
+      "address":"137 Blvd Isidore-Boucher, St. Jacques",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":true,
+      "orderURL":"",
+      "phoneNumber":"15067354657",
+      "openHours":[
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
          ]
       ]
    },
@@ -1160,9 +1320,49 @@
       ]
    },
    {
+      "name":"Dairy Queen",
+      "address":"207 Rue Victoria",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":false,
+      "orderURL":"",
+      "phoneNumber":"15067392002",
+      "openHours":[
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
+         ],
+         [
+            11,
+            22.00
+         ]
+      ]
+   },
+   {
       "name":"McDonald's",
       "address":"190 Boulevard Hébert",
-      "dineIn":false,
+      "dineIn":true,
       "takeOut":true,
       "delivery":false,
       "local":false,
