@@ -9,7 +9,8 @@ import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
 // import {RESTAURANT_DATA} from '../data.js'
 import * as ga from '../content/lib/ga'
 import * as locales from "../content/locale"
-import { sortRestaurants } from "../utils";
+import { sortRestaurants } from "../utils/sortRestaurants";
+import { isOpen }from '../utils/isOpen';
 
 config.autoAddCss = false;
 library.add(faCheck);
@@ -17,19 +18,6 @@ library.add(faTimes);
 
 function displayPhone(n) {
   return `+${n[0]} (${n.substring(1,4)}) ${n.substring(4,7)}-${n.substring(7,11)}`;
-}
-
-function isOpen(hours) {
-  let d = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Moncton"}));
-  let n = d.getDay();
-  let now = d.getHours() + "." + d.getMinutes();
-  let day = hours[n];
-
-  if ((now > day[0] && now < day[1])) {
-    return true;
-  } else {
-    return false;
-  }
 }
 
 function CheckLabel(props) {
