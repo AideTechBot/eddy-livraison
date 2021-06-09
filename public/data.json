@@ -760,6 +760,126 @@
       ]
    },
    {
+      "name":"Tim Hortons",
+      "address":"684 Rue Victoria",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":false,
+      "orderURL":"https://www.timhortons.ca/store-locator/service-mode",
+      "phoneNumber":"15067396456",
+      "openHours":[
+         [
+            4.30,
+            22
+         ],
+         [
+            4.30,
+            22
+         ],
+         [
+            4.30,
+            22
+         ],
+         [
+            4.30,
+            22
+         ],
+         [
+            4.30,
+            22
+         ],
+         [
+            4.30,
+            22
+         ],
+         [
+            4.30,
+            22
+         ]
+      ]
+   },
+   {
+      "name":"Tim Hortons",
+      "address":"155 Rue Victoria",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":false,
+      "orderURL":"https://www.timhortons.ca/store-locator/service-mode",
+      "phoneNumber":"15067356665",
+      "openHours":[
+         [
+            5,
+            22
+         ],
+         [
+            5,
+            22
+         ],
+         [
+            5,
+            22
+         ],
+         [
+            5,
+            22
+         ],
+         [
+            5,
+            22
+         ],
+         [
+            5,
+            22
+         ],
+         [
+            5,
+            22
+         ]
+      ]
+   },
+   {
+      "name":"Tim Hortons",
+      "address":"100 Grey Rock Rd, M.M.F.N.",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":false,
+      "orderURL":"https://www.timhortons.ca/store-locator/service-mode",
+      "phoneNumber":"15067366905",
+      "openHours":[
+         [
+            0,
+            23.59
+         ],
+         [
+            0,
+            23.59
+         ],
+         [
+            0,
+            23.59
+         ],
+         [
+            0,
+            23.59
+         ],
+         [
+            0,
+            23.59
+         ],
+         [
+            0,
+            23.59
+         ],
+         [
+            0,
+            23.59
+         ]
+      ]
+   },
+   {
       "name":"Josée Pizza Inc",
       "address":"322 Blvd Isidore-Boucher, St. Jaques",
       "dineIn":true,
