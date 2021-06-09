@@ -1561,6 +1561,86 @@
    },
    {
       "name":"Subway",
+      "address":"805 Rue Victoria",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":false,
+      "orderURL":"https://order.subway.com/en-ca/restaurant/66854-0/menu/?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=66854&utm_campaign=evergreen-2020&y_source=1_MTcxOTYwNDYtNzE1LWxvY2F0aW9uLm9yZGVyX3VybA%3D%3D",
+      "phoneNumber":"15067350109",
+      "openHours":[
+         [
+            10,
+            6.30
+         ],
+         [
+            8,
+            20
+         ],
+         [
+            8,
+            20
+         ],
+         [
+            8,
+            20
+         ],
+         [
+            8,
+            20
+         ],
+         [
+            8,
+            20
+         ],
+         [
+            8,
+            20
+         ]
+      ]
+   },
+   {
+      "name":"Subway",
+      "address":"121 Rue de l'Église",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":false,
+      "orderURL":"https://order.subway.com/en-ca/restaurant/15775-0/menu/?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=15775&utm_campaign=evergreen-2020&y_source=1_MTQ5MTkwODgtNzE1LWxvY2F0aW9uLm1lbnVfdXJs",
+      "phoneNumber":"15067395200",
+      "openHours":[
+         [
+            0,
+            0
+         ],
+         [
+            9,
+            19.00
+         ],
+         [
+            9,
+            19.00
+         ],
+         [
+            9,
+            19.00
+         ],
+         [
+            9,
+            19.00
+         ],
+         [
+            9,
+            19.00
+         ],
+         [
+            0,
+            0
+         ]
+      ]
+   },
+   {
+      "name":"Subway",
       "address":"180 Boulevard Hébert",
       "dineIn":true,
       "takeOut":true,
