@@ -720,8 +720,48 @@
       ]
    },
    {
+      "name":"Pizza Pot",
+      "address":"121 Rue de l'Église",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":true,
+      "orderURL":"",
+      "phoneNumber":"15067378890",
+      "openHours":[
+         [
+            0,
+            0
+         ],
+         [
+            0,
+            0
+         ],
+         [
+            0,
+            0
+         ],
+         [
+            10,
+            18
+         ],
+         [
+            10,
+            18
+         ],
+         [
+            10,
+            18
+         ],
+         [
+            0,
+            0
+         ]
+      ]
+   },
+   {
       "name":"Bossé MiniMart",
-      "address":"322 Blvd Isidore-Boucher, St. Jaques",
+      "address":"322 Blvd Isidore-Boucher, St. Jacques",
       "dineIn":true,
       "takeOut":true,
       "delivery":false,
