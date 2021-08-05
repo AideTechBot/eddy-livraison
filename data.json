@@ -1678,5 +1678,45 @@
             20.00
          ]
       ]
+   },
+   {
+      "name":"Qué Padre",
+      "address":"127 Rue Victoria",
+      "dineIn":true,
+      "takeOut":true,
+      "delivery":false,
+      "local":true,
+      "orderURL":"",
+      "phoneNumber":"15067366161",
+      "openHours":[
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            21.00
+         ],
+         [
+            11,
+            23.59
+         ],
+         [
+            11,
+            23.59
+         ],
+         [
+            11,
+            23.59
+         ]
+      ]
    }
 ]
