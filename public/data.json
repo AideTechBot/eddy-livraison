@@ -44,7 +44,7 @@
       "address":"30 Rue de l'Église",
       "dineIn":true,
       "takeOut":true,
-      "delivery":true,
+      "delivery":false,
       "local":true,
       "orderURL":"https://pur-simple.order-online.ai/en-CA/#/",
       "phoneNumber":"15067337310",
