@@ -265,7 +265,7 @@ export default function Home() {
       <footer>
         {format("frontPageFooter")}&nbsp;
         <a
-          href="https://mdionne.me"
+          href="https://mdionne.me?utm_source=Eddy+Livraison&utm_medium=Index&utm_campaign=Aug2024"
           target="_blank"
           rel="noopener noreferrer"
           className="manuel-link"
